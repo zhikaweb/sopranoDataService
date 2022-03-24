@@ -1,0 +1,217 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://service.data.soprano.eapo.org"
+           targetNamespace="http://service.data.soprano.eapo.org" elementFormDefault="qualified">
+    <xs:element name="saveApplicationRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="application" type="tns:application" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="saveApplicationResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="isSaved" type="xs:boolean"/>
+                <xs:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="saveAdditionRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="addition" type="tns:addition" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="saveAdditionResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="isSaved" type="xs:boolean"/>
+                <xs:element name="message" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="application">
+        <xs:sequence>
+            <xs:element name="applicationInfo" type="tns:applicationInfo" nillable="true"/>
+            <xs:element name="inventorInfo" type="tns:inventorInfo" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="ownInfoList" type="tns:ownerInfo" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="representInfo" type="tns:representInfo" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="specialAddress" type="tns:specialAddress" />
+            <xs:element name="docappliInfo" type="tns:docappliInfo" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="designInfo" type="tns:designInfo" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+            <xs:element name="payment" type="tns:payment" nillable="true"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="applicationInfo">
+        <xs:sequence>
+            <xs:element name="iduser" type="xs:int" />
+            <xs:element name="extidappli" type="xs:string" />
+            <xs:element name="dtrecept" type="xs:date" minOccurs="0" />
+            <xs:element name="rfappli" type="xs:string" />
+            <xs:element name="nbdesign" type="xs:int"/>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="tyappli" type="tns:tyappli"/>
+            <xs:element name="isexam" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="addition">
+        <xs:sequence>
+            <xs:element name="additionInfo" type="tns:additionInfo" nillable="true"/>
+            <xs:element name="docappliInfo" type="tns:docappliInfo" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="designInfo" type="tns:designInfo" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+            <xs:element name="payment" type="tns:payment" nillable="true"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="additionInfo">
+        <xs:sequence>
+            <xs:element name="iduser" type="xs:int" />
+            <xs:element name="extidappli" type="xs:string" />
+            <xs:element name="dtrecept" type="xs:date" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="tyappli">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="DIRECT"/>
+            <xs:enumeration value="NATIONAL"/>
+            <xs:enumeration value="MADRID"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="inventorInfo">
+        <xs:sequence>
+            <xs:element name="fninventor" type="xs:string"/>
+            <xs:element name="nminventor" type="xs:string"/>
+            <xs:element name="midninventor" type="xs:string"/>
+            <xs:element name="adinventor" type="xs:string"/>
+            <xs:element name="emailinventor" type="xs:string"/>
+            <xs:element name="idinventor" type="xs:string"/>
+            <xs:element name="idcountry" type="xs:string"/>
+            <xs:element name="designsAuthor" type="xs:string"/>
+            <xs:element name="confident" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="ownerInfo">
+        <xs:sequence>
+            <xs:element name="fnowner" type="xs:string"/>
+            <xs:element name="nmowner" type="xs:string"/>
+            <xs:element name="midnowner" type="xs:string"/>
+            <xs:element name="emailowner" type="xs:string"/>
+            <xs:element name="adowner" type="xs:string"/>
+            <xs:element name="telowner" type="xs:string"/>
+            <xs:element name="faxowner" type="xs:string"/>
+            <xs:element name="idcountry" type="xs:string"/>
+            <xs:element name="idowner" type="xs:int"/>
+            <xs:element name="tyowner" type="tns:tyowner"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="tyowner">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PHIS"/>
+            <xs:enumeration value="UR"/>
+            <xs:enumeration value="AS"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="representInfo">
+        <xs:sequence>
+            <xs:element name="fnperson" type="xs:string"/>
+            <xs:element name="nmperson" type="xs:string"/>
+            <xs:element name="midnperson" type="xs:string"/>
+            <xs:element name="idperson" type="xs:int"/>
+            <xs:element name="tyrepresent" type="xs:int"/>
+            <xs:element name="telperson" type="xs:string"/>
+            <xs:element name="faxperson" type="xs:string"/>
+            <xs:element name="emailperson" type="xs:string"/>
+            <xs:element name="idcountry" type="xs:string"/>
+            <xs:element name="adperson" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="specialAddress">
+        <xs:sequence>
+            <xs:element name="fnperson" type="xs:string"/>
+            <xs:element name="nmperson" type="xs:string"/>
+            <xs:element name="midnperson" type="xs:string"/>
+            <xs:element name="idperson" type="xs:int"/>
+            <xs:element name="telperson" type="xs:string"/>
+            <xs:element name="faxperson" type="xs:string"/>
+            <xs:element name="emailperson" type="xs:string"/>
+            <xs:element name="idcountry" type="xs:string"/>
+            <xs:element name="adperson" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="docappliInfo">
+        <xs:sequence>
+            <xs:element name="iddocument" type="xs:string"/>
+            <xs:element name="topages" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="designInfo">
+        <xs:sequence>
+            <xs:element name="nodesign" type="xs:string"/>
+            <xs:element name="oddesign" type="xs:int"/>
+            <xs:element name="complect" type="xs:string"/>
+            <xs:element name="nbDraw" type="xs:int"/>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="product" type="xs:string"/>
+            <xs:element name="locclass" type="xs:string"/>
+            <xs:element name="locclassmain" type="xs:string"/>
+            <xs:element name="priorityInfo" type="tns:priorityInfo"/>
+            <xs:element name="docappliInfo" type="tns:docappliInfo" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="priorityInfo">
+        <xs:sequence>
+            <xs:element name="typrio" type="tns:typrio"/>
+            <xs:element name="idcountry" type="xs:string"/>
+            <xs:element name="noprio" type="xs:string"/>
+            <xs:element name="dtprio" type="xs:date"/>
+            <xs:element name="STPRIO" type="xs:int" default="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="typrio">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PREV_APP"/>
+            <xs:enumeration value="ADD_DOCS"/>
+            <xs:enumeration value="PREV_EA_APP"/>
+            <xs:enumeration value="SHOW"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="payment">
+        <xs:sequence>
+            <xs:element name="typayer" type="tns:typayer"/>
+            <xs:element name="ftocollectInfo" type="tns:feeInfo" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="discount" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="typayer">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ADVANCE"/>
+            <xs:enumeration value="PAYORDER"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="feeInfo">
+        <xs:sequence>
+            <xs:element name="idfee" type="xs:string"/>
+            <xs:element name="amount" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>
