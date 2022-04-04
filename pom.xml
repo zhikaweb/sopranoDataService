@@ -109,6 +109,29 @@
 					</sources>
 				</configuration>
 			</plugin>
+			<!-- tag::wsdl[] -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxws-maven-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<id>wsimport-from-jdk</id>
+						<goals>
+							<goal>wsimport</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<wsdlUrls>
+						<wsdlUrl>http://192.168.3.229:8080/SopranoV522/getgengen?wsdl</wsdlUrl>
+					</wsdlUrls>
+					<keep>true</keep>
+					<packageName>org.eapo.service.sopranoDataService.ws.client</packageName>
+					<sourceDestDir>src/main/java</sourceDestDir>
+				</configuration>
+			</plugin>
+			<!-- end::wsdl[] -->
 		</plugins>
 	</build>
 
