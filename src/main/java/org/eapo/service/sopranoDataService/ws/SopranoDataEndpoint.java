@@ -1,10 +1,7 @@
 package org.eapo.service.sopranoDataService.ws;
 
 
-import org.eapo.soprano.data.service.SaveAdditionRequest;
-import org.eapo.soprano.data.service.SaveAdditionResponse;
-import org.eapo.soprano.data.service.SaveApplicationRequest;
-import org.eapo.soprano.data.service.SaveApplicationResponse;
+import org.eapo.soprano.data.service.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
