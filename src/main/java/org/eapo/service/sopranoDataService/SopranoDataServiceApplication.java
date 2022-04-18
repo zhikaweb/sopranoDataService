@@ -1,6 +1,5 @@
 package org.eapo.service.sopranoDataService;
 
-import org.eapo.service.sopranoDataService.model.Application;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;

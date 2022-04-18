@@ -1,17 +1,17 @@
 package org.eapo.service.sopranoDataService.model;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Data
-@Getter
-@Setter
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
+@Entity
+@Table(name = "divisiondesign")
 public class DivisionDesign {
 
 	private String idappli;

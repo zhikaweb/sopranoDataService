@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.eapo.service.sopranoDataService.model;
+package org.eapo.service.sopranoDataService.dto;
 
 import javax.xml.bind.annotation.XmlElement;
 
@@ -11,17 +11,26 @@ import javax.xml.bind.annotation.XmlElement;
  *
  * @author Usawich
  */
-public class SpecialAddress {
+public class RepresentInfo {
 
-    private String faxperson;
-    private String telperson;
-    private String emailperson;
-    private String adperson;
+    private Integer tyrepresent;
     private Integer idperson;
-    private String nmperson;
     private String fnperson;
     private String midnperson;
+    private String nmperson;
+    private String telperson;
+    private String faxperson;
+    private String emailperson;
     private String idcountry;
+    private String adperson;
+
+    public void setTyrepresent(Integer tyrepresent) {
+        this.tyrepresent = tyrepresent;
+    }
+
+    public void setIdperson(Integer idperson) {
+        this.idperson = idperson;
+    }
 
     public void setFnperson(String fnperson) {
         this.fnperson = fnperson;
@@ -31,51 +40,39 @@ public class SpecialAddress {
         this.midnperson = midnperson;
     }
 
-    public void setIdcountry(String idcountry) {
-        this.idcountry = idcountry;
-    }
-
-    public void setIdperson(Integer idperson) {
-        this.idperson = idperson;
-    }
-
-    public void setFaxperson(String faxperson) {
-        this.faxperson = faxperson;
+    public void setNmperson(String nmperson) {
+        this.nmperson = nmperson;
     }
 
     public void setTelperson(String telperson) {
         this.telperson = telperson;
     }
 
+    public void setFaxperson(String faxperson) {
+        this.faxperson = faxperson;
+    }
+
     public void setEmailperson(String emailperson) {
         this.emailperson = emailperson;
     }
 
-    public void setNmperson(String nmperson) {
-        this.nmperson = nmperson;
+    public void setIdcountry(String idcountry) {
+        this.idcountry = idcountry;
     }
 
     public void setAdperson(String adperson) {
         this.adperson = adperson;
     }
 
-    //@GETTERS
-    public String getIdcountry() {
-        return idcountry;
-    }
+//    @GETTERS
     
+    @XmlElement(required = true)
+    public Integer getTyrepresent() {
+        return tyrepresent;
+    }
+
     public Integer getIdperson() {
         return idperson;
-    }
-
-    @XmlElement(required = true)
-    public String getNmperson() {
-        return nmperson;
-    }
-
-    @XmlElement(required = true)
-    public String getAdperson() {
-        return adperson;
     }
 
     public String getFnperson() {
@@ -86,16 +83,29 @@ public class SpecialAddress {
         return midnperson;
     }
 
-    public String getFaxperson() {
-        return faxperson;
+    @XmlElement(required = true)
+    public String getNmperson() {
+        return nmperson;
     }
 
     public String getTelperson() {
         return telperson;
     }
 
+    public String getFaxperson() {
+        return faxperson;
+    }
+
     public String getEmailperson() {
         return emailperson;
     }
+    
+    @XmlElement(required = true)
+    public String getIdcountry() {
+        return idcountry;
+    }
 
+    public String getAdperson() {
+        return adperson;
+    }
 }

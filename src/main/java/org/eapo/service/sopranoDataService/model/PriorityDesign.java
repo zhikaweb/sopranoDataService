@@ -5,9 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Data
@@ -27,4 +25,9 @@ public class PriorityDesign {
 	private String idcountry;
 	private Date dtpriority;
 	private String rmprio;
+
+	@OneToOne
+	@MapsId
+	@JoinColumn(name = "iddesign")
+	private Design design;
 }

@@ -1,20 +1,17 @@
 package org.eapo.service.sopranoDataService.model;
 
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Data
-@Getter
-@Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "designappli")
 public class DesignAppli {
@@ -30,4 +27,13 @@ public class DesignAppli {
 	private int exreason;
 	private Date dtexclude;
 
+	@ManyToOne(fetch= FetchType.LAZY, cascade= CascadeType.MERGE)
+	@JoinColumn(name="idappli")
+	@JsonBackReference
+	private Ptappli ptappli;
+
+	@ManyToOne(fetch= FetchType.LAZY, cascade= CascadeType.MERGE)
+	@JoinColumn(name="iddesign")
+	@JsonBackReference
+	private Design design;
 }
