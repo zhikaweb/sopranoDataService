@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
+@SpringBootTest()
 class SopranoDataServiceApplicationTests {
 
 	Logger logger = LoggerFactory.getLogger(SopranoDataServiceApplication.class);
@@ -23,7 +23,7 @@ class SopranoDataServiceApplicationTests {
 	}
 
 	@Test
-	void getIdappli(){
+	public void getIdappli(){
 		String idappli = ptappliService.getIdappliByExtidappli("202140007");
 		logger.info("Idappli = " + idappli);
 	}
