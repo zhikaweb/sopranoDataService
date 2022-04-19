@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.List;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 public class DesignAppliTest {
@@ -21,9 +23,9 @@ public class DesignAppliTest {
 
     @Test
     public void getDesignAppliByIdAppli() {
-       DesignAppli designAppli =  designAppliService.getDesignAppliByIdappli("D202140003");
-       logger.info("DesignAppli...");
-       logger.info(String.valueOf(designAppli));
+        List<DesignAppli> designAppli =  designAppliService.getDesignAppliByIdappli("D202140007");
+        logger.info("DesignAppli...");
+        logger.info(String.valueOf(designAppli));
     }
 
 }

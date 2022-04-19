@@ -5,5 +5,5 @@ import org.eapo.service.sopranoDataService.model.DesignAppli;
 import java.util.List;
 
 public interface DesignAppliService {
-   DesignAppli getDesignAppliByIdappli(String idappli);
+   List<DesignAppli> getDesignAppliByIdappli(String idappli);
 }

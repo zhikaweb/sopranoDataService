@@ -18,6 +18,7 @@ public class Ptappli {
 
 	@Id
 	private String idappli;
+	private String extidappli;
 
 	@OneToMany(mappedBy="ptappli", fetch = FetchType.LAZY, cascade= CascadeType.ALL)
 	@JsonManagedReference

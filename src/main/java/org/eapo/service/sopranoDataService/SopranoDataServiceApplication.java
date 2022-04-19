@@ -27,6 +27,7 @@ import org.springframework.xml.xsd.XsdSchema;
 		"org.eapo.service.sopranoDataService.dto",
 		"org.eapo.service.sopranoDataService.repository",
 		"org.eapo.service.sopranoDataService.rest",
+		"org.eapo.service.sopranoDataService.utils",
 })
 public class SopranoDataServiceApplication extends WsConfigurerAdapter {
 

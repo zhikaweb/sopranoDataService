@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface DesignAppliRepository extends CrudRepository<DesignAppli, String> {
-    DesignAppli getDesignAppliByIdappli(String idappli);
+    List<DesignAppli> getDesignAppliByIdappli(String idappli);
 }

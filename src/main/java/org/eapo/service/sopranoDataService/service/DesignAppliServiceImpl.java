@@ -4,6 +4,7 @@ import org.eapo.service.sopranoDataService.model.DesignAppli;
 import org.eapo.service.sopranoDataService.repository.DesignAppliRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -14,7 +15,10 @@ public class DesignAppliServiceImpl implements DesignAppliService{
     DesignAppliRepository designAppliRepository;
 
     @Override
-    public DesignAppli getDesignAppliByIdappli(String idappli) {
+    @Transactional(readOnly = true)
+    public List<DesignAppli> getDesignAppliByIdappli(String idappli) {
         return designAppliRepository.getDesignAppliByIdappli(idappli);
     }
+
+
 }
