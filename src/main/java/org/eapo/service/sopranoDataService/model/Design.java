@@ -11,8 +11,8 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-@EqualsAndHashCode(callSuper = true)
+@ToString(exclude = {"designApplis"})
+@EqualsAndHashCode
 @Entity
 @Table(name = "design")
 public class Design {
@@ -31,11 +31,11 @@ public class Design {
 	@JsonManagedReference
 	private Set<DesignAppli> designApplis = new HashSet<>();
 
-	@OneToOne(mappedBy = "design", cascade = CascadeType.ALL)
+	@OneToOne(mappedBy = "design", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@PrimaryKeyJoinColumn
 	private Lookin lookin;
 
-	@OneToOne(mappedBy = "design", cascade = CascadeType.ALL)
+	@OneToOne(mappedBy = "design", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	@PrimaryKeyJoinColumn
 	private PriorityDesign priorityDesign;
 

@@ -20,7 +20,14 @@ import org.springframework.xml.xsd.XsdSchema;
 @EnableWs
 @SpringBootApplication
 @Configuration
-@ComponentScan(basePackages = {"org.eapo.service.sopranoDataService.ws"})
+@ComponentScan(basePackages = {
+		"org.eapo.service.sopranoDataService.ws",
+		"org.eapo.service.sopranoDataService.service",
+		"org.eapo.service.sopranoDataService.model",
+		"org.eapo.service.sopranoDataService.dto",
+		"org.eapo.service.sopranoDataService.repository",
+		"org.eapo.service.sopranoDataService.rest",
+})
 public class SopranoDataServiceApplication extends WsConfigurerAdapter {
 
 	private static Logger logger = LoggerFactory.getLogger(SopranoDataServiceApplication.class.getName());

@@ -1,9 +1,6 @@
 package org.eapo.service.sopranoDataService.model;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -11,6 +8,8 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
+@EqualsAndHashCode
+@ToString(exclude = "design")
 @Entity
 @Table(name = "lookin")
 public class Lookin {

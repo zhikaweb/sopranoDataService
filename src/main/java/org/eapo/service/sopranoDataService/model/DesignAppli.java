@@ -5,15 +5,17 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-@EqualsAndHashCode(callSuper = true)
+@ToString(exclude = {"ptappli"})
+@EqualsAndHashCode
 @Entity
 @Table(name = "designappli")
+@IdClass(DesignAppliId.class)
 public class DesignAppli {
 
 	@Id
@@ -24,16 +26,16 @@ public class DesignAppli {
 
 	private int oddesign;
 	private int dgnstatus;
-	private int exreason;
+	private Integer exreason;
 	private Date dtexclude;
 
 	@ManyToOne(fetch= FetchType.LAZY, cascade= CascadeType.MERGE)
-	@JoinColumn(name="idappli")
+	@JoinColumn(name="idappli", insertable = false, updatable = false)
 	@JsonBackReference
 	private Ptappli ptappli;
 
-	@ManyToOne(fetch= FetchType.LAZY, cascade= CascadeType.MERGE)
-	@JoinColumn(name="iddesign")
+	@ManyToOne(fetch= FetchType.EAGER, cascade= CascadeType.MERGE)
+	@JoinColumn(name="iddesign", insertable = false, updatable = false)
 	@JsonBackReference
 	private Design design;
 }

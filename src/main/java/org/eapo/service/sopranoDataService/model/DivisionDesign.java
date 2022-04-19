@@ -3,17 +3,19 @@ package org.eapo.service.sopranoDataService.model;
 import lombok.*;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Data
 @AllArgsConstructor
 @ToString
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode
 @NoArgsConstructor
 @Entity
 @Table(name = "divisiondesign")
 public class DivisionDesign {
 
+	@Id
 	private String idappli;
 	private String idapplidiv;
 	private int divreason;

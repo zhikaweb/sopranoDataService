@@ -1,9 +1,6 @@
 package org.eapo.service.sopranoDataService.model;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -12,6 +9,8 @@ import java.util.Date;
 @Getter
 @Setter
 @NoArgsConstructor
+@EqualsAndHashCode
+@ToString(exclude = "design")
 @Entity
 @Table(name = "prioritydesign")
 public class PriorityDesign {

@@ -5,7 +5,7 @@ import org.eapo.service.sopranoDataService.repository.DesignAppliRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.List;
 
 @Service
 public class DesignAppliServiceImpl implements DesignAppliService{
@@ -14,7 +14,7 @@ public class DesignAppliServiceImpl implements DesignAppliService{
     DesignAppliRepository designAppliRepository;
 
     @Override
-    public Optional<DesignAppli> getDesignAppliByIdappli(String idappli) {
-        return designAppliRepository.findById(idappli);
+    public DesignAppli getDesignAppliByIdappli(String idappli) {
+        return designAppliRepository.getDesignAppliByIdappli(idappli);
     }
 }

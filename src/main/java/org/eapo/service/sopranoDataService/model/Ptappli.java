@@ -10,8 +10,8 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
-@EqualsAndHashCode(callSuper = true)
+@ToString(exclude = "designApplis")
+@EqualsAndHashCode
 @Entity
 @Table(name = "ptappli",  schema = "patent_test")
 public class Ptappli {
