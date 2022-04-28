@@ -13,14 +13,14 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 public class GengenTest {
 
-    Logger logger = LoggerFactory.getLogger(DesignAppliTest.class);
+    Logger logger = LoggerFactory.getLogger(DesignAppliTest.class.getName());
 
     @Test
     public void callGengen() {
         GengenServiceImplService gengenServiceImplService = new GengenServiceImplService();
         GengenService gengenService = gengenServiceImplService.getGengenServiceImplPort();
-        System.out.println(gengenService.getNextApplicationNumber());
+        System.out.println(gengenService.getNextApplicationNumber()); // return "k_id_extidappli"
         System.out.println(gengenService.getExtIdappli());
-        System.out.println(gengenService.getNextApplicationNumberForDesign());
+        System.out.println(gengenService.getNextApplicationNumberForDesign()); // return "k_indappli"
     }
 }

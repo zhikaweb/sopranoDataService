@@ -13,7 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest()
 class SopranoDataServiceApplicationTests {
 
-	Logger logger = LoggerFactory.getLogger(SopranoDataServiceApplication.class);
+	Logger logger = LoggerFactory.getLogger(SopranoDataServiceApplication.class.getName());
 
 	@Autowired
 	PtappliServiceImpl ptappliService;
@@ -24,8 +24,8 @@ class SopranoDataServiceApplicationTests {
 
 	@Test
 	public void getIdappli(){
-		String idappli = ptappliService.getIdappliByExtidappli("202140007");
-		logger.info("Idappli = " + idappli);
+		ptappliService.getIdappliByExtidappli("202140007");
+		ptappliService.getNewIdappliForDesign("202140007");
 	}
 }
 

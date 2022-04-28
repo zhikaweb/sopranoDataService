@@ -2,6 +2,8 @@ package org.eapo.service.sopranoDataService.service;
 
 import org.eapo.service.sopranoDataService.dto.DesignDTO;
 import org.eapo.service.sopranoDataService.repository.DesignRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,8 @@ import java.util.List;
 
 @Service("DesignDTOService")
 public class DesignDTOServiceImpl implements DesignDTOService {
+
+	private static Logger logger = LoggerFactory.getLogger(DesignDTOServiceImpl.class.getName());
 
 	@PersistenceContext
 	EntityManager entityManager;

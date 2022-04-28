@@ -16,7 +16,7 @@ import java.util.List;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
 public class DesignAppliTest {
 
-    Logger logger = LoggerFactory.getLogger(DesignAppliTest.class);
+    Logger logger = LoggerFactory.getLogger(DesignAppliTest.class.getName());
 
     @Autowired
     DesignAppliService designAppliService;
@@ -24,8 +24,7 @@ public class DesignAppliTest {
     @Test
     public void getDesignAppliByIdAppli() {
         List<DesignAppli> designAppli =  designAppliService.getDesignAppliByIdappli("D202140007");
-        logger.info("DesignAppli...");
-        logger.info(String.valueOf(designAppli));
+        logger.info("DesignAppli: {}", designAppli);
     }
 
 }

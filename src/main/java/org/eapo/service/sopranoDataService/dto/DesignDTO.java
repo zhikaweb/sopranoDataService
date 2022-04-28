@@ -350,4 +350,36 @@ public class DesignDTO implements Serializable {
     public void setProduct(String product) {
         this.product = product;
     }
+
+    public static int getStatusActive() {
+        return STATUS_ACTIVE;
+    }
+
+    public static int getStatusExclude() {
+        return STATUS_EXCLUDE;
+    }
+
+    public static String getWHOAMI() {
+        return WHOAMI;
+    }
+
+    public static int getClassVersion() {
+        return CLASS_VERSION;
+    }
+
+    public static int getODPRIO() {
+        return ODPRIO;
+    }
+
+    public static int getExtidprioMaxLength() {
+        return EXTIDPRIO_MAX_LENGTH;
+    }
+
+    public static String getNodesignSuffix() {
+        return NODESIGN_SUFFIX;
+    }
+
+    public static int getNodsesignMinSize() {
+        return NODSESIGN_MIN_SIZE;
+    }
 }
